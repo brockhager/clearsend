@@ -28,12 +28,20 @@ export const createQuote = async (amount: number): Promise<Quote> => {
   return { amount, fee, totalDebit };
 };
 
-export const executeTransfer = async (fromAccountId: string, toRecipientId: string, amount: number, quote: Quote) => {
-  await new Promise((r) => setTimeout(r, 1000));
-  // Return success
+export const executeTransfer = async (
+  fromAccountId: string,
+  toRecipientId: string,
+  amount: number,
+  quote: Quote
+) => {
+  // Simulated network latency
+  await new Promise((r) => setTimeout(r, 500));
+  // Simulate success with unique transfer ID and timestamp
+  const transferId = `${Date.now()}-${Math.floor(Math.random() * 1000)}`;
   return {
     success: true,
-    transferId: `${Date.now()}-${Math.floor(Math.random()*1000)}`,
+    transferId,
+    timestamp: new Date().toISOString(),
     amount,
     fee: quote.fee
   };

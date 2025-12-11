@@ -15,6 +15,7 @@ type ContextType = {
   balance: number;
   transactions: Transaction[];
   sendMoney: (t: Omit<Transaction, 'id'|'date'|'status'>) => Promise<Transaction>;
+  commitTransfer: (t: Omit<Transaction, 'id'|'date'|'status'> & { id: string; date: string; status: 'success' | 'failed' }) => Promise<Transaction>;
   addTransaction: (t: Transaction) => void;
 };
 
@@ -36,6 +37,23 @@ export const BalanceProvider: React.FC<{children: ReactNode}> = ({ children }) =
     setTransactions((prev) => [t, ...prev]);
   };
 
+  const commitTransfer = async (t: Omit<Transaction, 'id'|'date'|'status'> & { id: string; date: string; status: 'success'|'failed' }): Promise<Transaction> => {
+    const transaction: Transaction = {
+      ...t,
+      id: t.id,
+      date: t.date,
+      status: t.status
+    };
+
+    if (transaction.status === 'success') {
+      // Deduct balance
+      setBalance((b) => b - transaction.totalDebit);
+    }
+
+    addTransaction(transaction);
+    return transaction;
+  };
+
   const sendMoney = async (t: Omit<Transaction, 'id'|'date'|'status'>): Promise<Transaction> => {
     // For simulation, we create the transaction, deduct the balance and return
     const transaction: Transaction = {
@@ -54,7 +72,7 @@ export const BalanceProvider: React.FC<{children: ReactNode}> = ({ children }) =
   };
 
   return (
-    <BalanceContext.Provider value={{ balance, transactions, sendMoney, addTransaction }}>
+    <BalanceContext.Provider value={{ balance, transactions, sendMoney, commitTransfer, addTransaction }}>
       {children}
     </BalanceContext.Provider>
   );

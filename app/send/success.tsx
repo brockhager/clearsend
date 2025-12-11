@@ -5,7 +5,7 @@ import { useBalance } from '../../src/contexts/BalanceContext';
 
 export default function SuccessScreen() {
   const router = useRouter();
-  const { transactions } = useBalance();
+  const { transactions, balance } = useBalance();
   const params = useLocalSearchParams();
   const txId = String(params.txId ?? '');
 
@@ -22,6 +22,7 @@ export default function SuccessScreen() {
           <Text>Fee: ${tx.fee.toFixed(2)}</Text>
           <Text>Total Debit: ${tx.totalDebit.toFixed(2)}</Text>
           <Text>Status: {tx.status}</Text>
+          <Text style={{ marginTop: 8, fontWeight: '700' }}>Remaining Balance: ${balance.toFixed(2)}</Text>
         </View>
       ) : (
         <Text>Transaction ID: {txId}</Text>

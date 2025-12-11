@@ -1,5 +1,10 @@
 node_modules
 .expo
 /.expo
-package-lock.json
+.expo/*
 yarn.lock
+.vscode
+dist
+build
+/.expo
+/.expo/*

@@ -43,15 +43,16 @@ jobs:
             npm ci --legacy-peer-deps
             echo "Running tests (unit + smoke)"
             npm test --silent
-            echo "Starting Expo dev server (background)"
-            npx expo start --no-dev --minify --non-interactive &
+            echo "Starting Android native build - prebuilding (this may take a while)"
+            # Generate native Android project from managed expo (prebuild)
+            npx expo prebuild --platform android --no-install
+
+            echo "Building and installing app to the emulator via expo run:android"
+            # expo run:android will build, install and launch the app
+            npx expo run:android --no-dev --variant debug --no-packager --non-interactive
+            
+            # Give the device some time to finish launching
             sleep 10
-            # Confirm expo is running
-            ps aux | grep expo
-            echo "Attempting to open on Android (should present a message showing 'Opening on Android' if successful)"
-            npx expo start --android --no-dev --minify --non-interactive --tunnel false &
-            sleep 15
-            # Check logs for the 'Opening on Android' status
-            ps aux | grep expo
+            ps aux | grep expo || true
             adb devices
             echo "Smoke checks completed"

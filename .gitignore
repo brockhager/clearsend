@@ -1,1 +1,10 @@
 node_modules
+.expo
+/.expo
+.expo/*
+yarn.lock
+.vscode
+dist
+build
+/.expo
+/.expo/*

@@ -14,7 +14,7 @@ export default function ConfirmScreen() {
   const amount = Number(params.amount ?? 0);
   const fee = Number(params.fee ?? 0);
   const totalDebit = Number(params.totalDebit ?? 0);
-  const { sendMoney, balance } = useBalance();
+  const { commitTransfer, balance } = useBalance();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,9 +35,11 @@ export default function ConfirmScreen() {
     try {
       const response = await executeTransfer('me', id, amount, { amount, fee, totalDebit });
       if (response.success) {
-        const tx = await sendMoney({ to: name, dfsp, amount, fee, totalDebit });
+        const tx = await commitTransfer({ id: response.transferId, date: response.timestamp ?? new Date().toISOString(), status: 'success', to: name, dfsp, amount, fee, totalDebit });
         // navigate to success with tx id
         router.replace({ pathname: '/send/success', params: { txId: tx.id } });
+      } else {
+        setError('Transfer failed. Please try again.');
       }
     } catch (err) {
       console.warn(err);

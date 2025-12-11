@@ -37,7 +37,7 @@ export default function DiscoveryScreen() {
         onChangeText={setRecipientId}
         placeholder="Enter recipient ID (e.g., 12345)"
         style={styles.input}
-        keyboardType="default"
+        keyboardType="phone-pad"
         accessibilityLabel="Recipient ID input"
         autoCapitalize="none"
       />
@@ -63,6 +63,7 @@ export default function DiscoveryScreen() {
           <Pressable
             style={styles.buttonSmall}
             onPress={() => router.push({ pathname: '/send/quote', params: { id: recipient.id, name: recipient.name, dfsp: recipient.dfsp } })}
+            accessibilityLabel="Proceed to quote"
           >
             <Text style={styles.buttonText}>Proceed</Text>
           </Pressable>

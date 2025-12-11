@@ -79,12 +79,15 @@ jobs:
           echo "=== Possible ClearSend app path detail ==="
           for p in $(adb -s emulator-5554 shell pm list packages | sed 's/package://g'); do adb -s emulator-5554 shell pm path $p || true; done | head -n 40 || true
 
-      - name: Save ADB logs and packages as artifacts
+      - name: Save ADB logs and packages to workspace
         if: always()
         run: |
+          echo "Saving logcat and package list to workspace"
           adb -s emulator-5554 logcat -d > android-logcat.txt || true
           adb -s emulator-5554 shell pm list packages > android-packages.txt || true
-          echo "Saved logs to android-logcat.txt and android-packages.txt"
+
+      - name: Upload ADB diagnostics artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: android-diagnostics

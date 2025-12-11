@@ -28,15 +28,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK
+      - name: Setup Android SDK (AOSP arm64, API 29)
         uses: reactivecircus/android-emulator-runner@v2
         timeout-minutes: 5
         with:
-          api-level: 33
-          target: google_apis
-          arch: x86_64
+          api-level: 29
+          target: default
+          arch: arm64
           force-avd-creation: true
-          emulator-options: -no-window -no-audio -gpu swiftshader_indirect
+          # Set lightweight options; disable audio and headless window for speed
+          emulator-options: -no-window -no-audio -gpu swiftshader_indirect -no-snapshot
           script: |
             echo "Checking adb devices..."
             adb wait-for-device

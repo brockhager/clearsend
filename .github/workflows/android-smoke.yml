@@ -50,8 +50,73 @@ jobs:
             npx expo prebuild --platform android --no-install
 
             echo "Building and installing app to the emulator via expo run:android"
-            # expo run:android will build, install and launch the app
-            npx expo run:android --no-dev --variant debug --no-packager --non-interactive
+
+            # WAIT for the device to be recognized as 'device' (not 'offline') and for the boot to complete.
+            echo "Ensuring ADB recognizes the emulator and boot is complete (timeout 120s)"
+            adb start-server || true
+            # Wait for device online status
+            MAX_WAIT=120
+            WAITED=0
+            INTERVAL=5
+            DEVICE_STATE=""
+            while [ "$WAITED" -lt $MAX_WAIT ]; do
+              DEVICE_STATE=$(adb devices | awk '/emulator-5554/{print $2}') || true
+              echo "Current device state: $DEVICE_STATE"
+              if [ "$DEVICE_STATE" = "device" ]; then
+                echo "Device is online"
+                break
+              fi
+              if [ "$DEVICE_STATE" = "offline" ]; then
+                echo "Device offline: restarting adb server"
+                adb kill-server || true
+                adb start-server || true
+              fi
+              sleep $INTERVAL
+              WAITED=$((WAITED + INTERVAL))
+            done
+            if [ "$DEVICE_STATE" != "device" ]; then
+              echo "Warning: device did not become 'device' within timeout. Proceeding anyway to capture logs." >&2
+            fi
+
+            # Wait for sys.boot_completed (some images use dev.bootcomplete)
+            BOOTED=0
+            WAITED=0
+            while [ "$WAITED" -lt $MAX_WAIT ]; do
+              BOOTED=$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null || adb -s emulator-5554 shell getprop dev.bootcomplete 2>/dev/null || echo 0)
+              BOOTED=$(echo "$BOOTED" | tr -d '\r')
+              echo "Boot completed? $BOOTED"
+              if [ "$BOOTED" = "1" ]; then
+                echo "Boot complete"
+                break
+              fi
+              sleep $INTERVAL
+              WAITED=$((WAITED + INTERVAL))
+            done
+            if [ "$BOOTED" != "1" ]; then
+              echo "Warning: boot property not 1 within timeout. Proceeding to build, but this may fail." >&2
+            fi
+
+            # Now attempt native build and install. Retry once if adb offline error occurs.
+            npx expo run:android --no-dev --variant debug --no-packager --non-interactive || {
+              echo "expo run:android failed on first attempt. Checking adb state(s)." >&2
+              adb devices -l || true
+              # If offline, try restarting adb and retry once
+              if adb devices | grep -q 'offline'; then
+                echo "Device offline detected; restarting adb and retrying..."
+                adb kill-server || true
+                adb start-server || true
+                sleep 3
+                adb wait-for-device || true
+                npx expo run:android --no-dev --variant debug --no-packager --non-interactive || {
+                  echo "expo run:android failed again. Capturing debug information..." >&2
+                  adb -s emulator-5554 logcat -d || true
+                  exit 1
+                }
+              else
+                echo "expo run:android failed for another reason; exiting" >&2
+                exit 1
+              fi
+            }
             
             # Give the device some time to finish launching
             sleep 10

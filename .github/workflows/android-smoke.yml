@@ -56,3 +56,23 @@ jobs:
             ps aux | grep expo || true
             adb devices
             echo "Smoke checks completed"
+
+      - name: Collect ADB diagnostics (logcat)
+        if: always()
+        run: |
+          echo "=== adb devices ==="
+          adb devices -l || true
+          echo "=== GETPROP sys.boot_completed ==="
+          adb -s emulator-5554 shell getprop sys.boot_completed || true
+          echo "=== adb shell dumpsys activity top (short) ==="
+          adb -s emulator-5554 shell dumpsys activity activities | head -n 40 || true
+          echo "=== adb logcat dump (last 5K chars) ==="
+          adb -s emulator-5554 logcat -d || true
+
+      - name: Collect installed packages and app path
+        if: always()
+        run: |
+          echo "=== Installed packages (filtered for expo/clearsend) ==="
+          adb -s emulator-5554 shell pm list packages | grep -E "expo|clearsend|com.clearsend" || true
+          echo "=== Possible ClearSend app path detail ==="
+          for p in $(adb -s emulator-5554 shell pm list packages | sed 's/package://g'); do adb -s emulator-5554 shell pm path $p || true; done | head -n 40 || true

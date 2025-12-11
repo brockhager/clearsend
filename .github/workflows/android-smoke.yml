@@ -10,6 +10,7 @@ jobs:
   android-smoke:
     name: Android smoke
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: read
     steps:
@@ -29,6 +30,7 @@ jobs:
 
       - name: Setup Android SDK
         uses: reactivecircus/android-emulator-runner@v2
+        timeout-minutes: 5
         with:
           api-level: 33
           target: google_apis

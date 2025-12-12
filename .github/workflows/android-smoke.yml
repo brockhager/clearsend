@@ -31,7 +31,6 @@ jobs:
       - name: Setup Android SDK (AOSP x86_64, API 29)
         uses: reactivecircus/android-emulator-runner@v2
         timeout-minutes: 20
-        emulator-boot-timeout: 600
         with:
           api-level: 29
           target: default

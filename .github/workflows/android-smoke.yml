@@ -124,16 +124,18 @@ jobs:
       - name: Print Emulator Logs (if any)
         if: always()
         run: |
-         echo "=== Emulator log (if exists) ==="
-         # Find the log file inside the .avd directory (e.g., emulator.log or qemu.log)
-         LOG_DIR="$HOME/.android/avd/test.avd"
+          echo "=== Emulator log (if exists) ==="
+          # Dynamically detect the AVD directory
+          LOG_PATH=$(ls -1 $HOME/.android/avd/*.avd 2>/dev/null | head -n 1 || true)
+          LOG_DIR="$LOG_PATH"
           
-         if [ -d "$LOG_DIR" ]; then
-           echo "Checking directory: $LOG_DIR"
-           find "$LOG_DIR" -name "*.log" -maxdepth 1 -exec echo "--- {} ---" \; -exec tail -n 100 {} \;
-         else
-           echo "AVD directory not found."
-         fi
+          if [ -z "$LOG_DIR" ]; then
+            echo "AVD directory not found."
+          else
+            echo "Checking directory: $LOG_DIR"
+            # Print short tails from known log files
+            find "$LOG_DIR" -maxdepth 1 -name "*.log" -exec echo "--- {} ---" \; -exec tail -n 100 {} \;
+          fi
 
       - name: Collect ADB diagnostics (logcat)
         if: always()

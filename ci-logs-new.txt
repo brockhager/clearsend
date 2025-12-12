@@ -1,0 +1,818 @@
+Android smoke	Set up job	∩╗┐2025-12-12T07:39:10.2552195Z Current runner version: '2.329.0'
+Android smoke	Set up job	2025-12-12T07:39:10.2586987Z ##[group]Runner Image Provisioner
+Android smoke	Set up job	2025-12-12T07:39:10.2588200Z Hosted Compute Agent
+Android smoke	Set up job	2025-12-12T07:39:10.2589186Z Version: 20251202.455
+Android smoke	Set up job	2025-12-12T07:39:10.2590107Z Commit: 6c10caca4910e198df60de23adf20ad317c474e3
+Android smoke	Set up job	2025-12-12T07:39:10.2591180Z Build Date: 2025-12-02T15:56:59Z
+Android smoke	Set up job	2025-12-12T07:39:10.2592355Z Worker ID: {c4e6fdee-ce6b-498d-a07b-c60042cd1c12}
+Android smoke	Set up job	2025-12-12T07:39:10.2593445Z ##[endgroup]
+Android smoke	Set up job	2025-12-12T07:39:10.2594241Z ##[group]Operating System
+Android smoke	Set up job	2025-12-12T07:39:10.2595163Z Ubuntu
+Android smoke	Set up job	2025-12-12T07:39:10.2595942Z 24.04.3
+Android smoke	Set up job	2025-12-12T07:39:10.2596853Z LTS
+Android smoke	Set up job	2025-12-12T07:39:10.2597622Z ##[endgroup]
+Android smoke	Set up job	2025-12-12T07:39:10.2598465Z ##[group]Runner Image
+Android smoke	Set up job	2025-12-12T07:39:10.2599355Z Image: ubuntu-24.04
+Android smoke	Set up job	2025-12-12T07:39:10.2600195Z Version: 20251208.163.1
+Android smoke	Set up job	2025-12-12T07:39:10.2601867Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251208.163/images/ubuntu/Ubuntu2404-Readme.md
+Android smoke	Set up job	2025-12-12T07:39:10.2604259Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251208.163
+Android smoke	Set up job	2025-12-12T07:39:10.2606958Z ##[endgroup]
+Android smoke	Set up job	2025-12-12T07:39:10.2608638Z ##[group]GITHUB_TOKEN Permissions
+Android smoke	Set up job	2025-12-12T07:39:10.2611507Z Contents: read
+Android smoke	Set up job	2025-12-12T07:39:10.2612317Z Metadata: read
+Android smoke	Set up job	2025-12-12T07:39:10.2613178Z ##[endgroup]
+Android smoke	Set up job	2025-12-12T07:39:10.2616112Z Secret source: Actions
+Android smoke	Set up job	2025-12-12T07:39:10.2617330Z Prepare workflow directory
+Android smoke	Set up job	2025-12-12T07:39:10.3080927Z Prepare all required actions
+Android smoke	Set up job	2025-12-12T07:39:10.3138038Z Getting action download info
+Android smoke	Set up job	2025-12-12T07:39:10.7200555Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Android smoke	Set up job	2025-12-12T07:39:10.8370409Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Android smoke	Set up job	2025-12-12T07:39:10.9300767Z Download action repository 'actions/setup-java@v4' (SHA:c1e323688fd81a25caa38c78aa6df2d33d3e20d9)
+Android smoke	Set up job	2025-12-12T07:39:11.3095738Z Download action repository 'reactivecircus/android-emulator-runner@v2' (SHA:b530d96654c385303d652368551fb075bc2f0b6b)
+Android smoke	Set up job	2025-12-12T07:39:11.5459011Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Android smoke	Set up job	2025-12-12T07:39:11.7630239Z Complete job name: Android smoke
+Android smoke	Checkout	∩╗┐2025-12-12T07:39:11.8393079Z ##[group]Run actions/checkout@v4
+Android smoke	Checkout	2025-12-12T07:39:11.8394146Z with:
+Android smoke	Checkout	2025-12-12T07:39:11.8394661Z   repository: brockhager/clearsend
+Android smoke	Checkout	2025-12-12T07:39:11.8395660Z   token: ***
+Android smoke	Checkout	2025-12-12T07:39:11.8396302Z   ssh-strict: true
+Android smoke	Checkout	2025-12-12T07:39:11.8396854Z   ssh-user: git
+Android smoke	Checkout	2025-12-12T07:39:11.8397388Z   persist-credentials: true
+Android smoke	Checkout	2025-12-12T07:39:11.8398022Z   clean: true
+Android smoke	Checkout	2025-12-12T07:39:11.8398546Z   sparse-checkout-cone-mode: true
+Android smoke	Checkout	2025-12-12T07:39:11.8399250Z   fetch-depth: 1
+Android smoke	Checkout	2025-12-12T07:39:11.8399784Z   fetch-tags: false
+Android smoke	Checkout	2025-12-12T07:39:11.8400323Z   show-progress: true
+Android smoke	Checkout	2025-12-12T07:39:11.8400863Z   lfs: false
+Android smoke	Checkout	2025-12-12T07:39:11.8401335Z   submodules: false
+Android smoke	Checkout	2025-12-12T07:39:11.8401874Z   set-safe-directory: true
+Android smoke	Checkout	2025-12-12T07:39:11.8402721Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:11.9486720Z Syncing repository: brockhager/clearsend
+Android smoke	Checkout	2025-12-12T07:39:11.9489184Z ##[group]Getting Git version info
+Android smoke	Checkout	2025-12-12T07:39:11.9490338Z Working directory is '/home/runner/work/clearsend/clearsend'
+Android smoke	Checkout	2025-12-12T07:39:11.9491984Z [command]/usr/bin/git version
+Android smoke	Checkout	2025-12-12T07:39:11.9571387Z git version 2.52.0
+Android smoke	Checkout	2025-12-12T07:39:11.9597735Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:11.9611859Z Temporarily overriding HOME='/home/runner/work/_temp/e6c3d3c4-c431-4212-b951-57af5e4cc3f0' before making global git config changes
+Android smoke	Checkout	2025-12-12T07:39:11.9614350Z Adding repository directory to the temporary git global config as a safe directory
+Android smoke	Checkout	2025-12-12T07:39:11.9624125Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/clearsend/clearsend
+Android smoke	Checkout	2025-12-12T07:39:11.9661743Z Deleting the contents of '/home/runner/work/clearsend/clearsend'
+Android smoke	Checkout	2025-12-12T07:39:11.9664988Z ##[group]Initializing the repository
+Android smoke	Checkout	2025-12-12T07:39:11.9669155Z [command]/usr/bin/git init /home/runner/work/clearsend/clearsend
+Android smoke	Checkout	2025-12-12T07:39:11.9782533Z hint: Using 'master' as the name for the initial branch. This default branch name
+Android smoke	Checkout	2025-12-12T07:39:11.9784554Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Android smoke	Checkout	2025-12-12T07:39:11.9787410Z hint: to use in all of your new repositories, which will suppress this warning,
+Android smoke	Checkout	2025-12-12T07:39:11.9790267Z hint: call:
+Android smoke	Checkout	2025-12-12T07:39:11.9791444Z hint:
+Android smoke	Checkout	2025-12-12T07:39:11.9793176Z hint: 	git config --global init.defaultBranch <name>
+Android smoke	Checkout	2025-12-12T07:39:11.9795461Z hint:
+Android smoke	Checkout	2025-12-12T07:39:11.9797605Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Android smoke	Checkout	2025-12-12T07:39:11.9800506Z hint: 'development'. The just-created branch can be renamed via this command:
+Android smoke	Checkout	2025-12-12T07:39:11.9802628Z hint:
+Android smoke	Checkout	2025-12-12T07:39:11.9803538Z hint: 	git branch -m <name>
+Android smoke	Checkout	2025-12-12T07:39:11.9804747Z hint:
+Android smoke	Checkout	2025-12-12T07:39:11.9806605Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Android smoke	Checkout	2025-12-12T07:39:11.9808685Z Initialized empty Git repository in /home/runner/work/clearsend/clearsend/.git/
+Android smoke	Checkout	2025-12-12T07:39:11.9811402Z [command]/usr/bin/git remote add origin https://github.com/brockhager/clearsend
+Android smoke	Checkout	2025-12-12T07:39:11.9837298Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:11.9839158Z ##[group]Disabling automatic garbage collection
+Android smoke	Checkout	2025-12-12T07:39:11.9841197Z [command]/usr/bin/git config --local gc.auto 0
+Android smoke	Checkout	2025-12-12T07:39:11.9871468Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:11.9872701Z ##[group]Setting up auth
+Android smoke	Checkout	2025-12-12T07:39:11.9878139Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Android smoke	Checkout	2025-12-12T07:39:11.9907497Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Android smoke	Checkout	2025-12-12T07:39:12.0253856Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Android smoke	Checkout	2025-12-12T07:39:12.0285869Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Android smoke	Checkout	2025-12-12T07:39:12.0500633Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Android smoke	Checkout	2025-12-12T07:39:12.0532389Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Android smoke	Checkout	2025-12-12T07:39:12.0760730Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Android smoke	Checkout	2025-12-12T07:39:12.0793716Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:12.0794883Z ##[group]Fetching the repository
+Android smoke	Checkout	2025-12-12T07:39:12.0803904Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ad235c5186277283c8f485b7805cf9c0233841c5:refs/remotes/origin/main
+Android smoke	Checkout	2025-12-12T07:39:12.2603459Z From https://github.com/brockhager/clearsend
+Android smoke	Checkout	2025-12-12T07:39:12.2609323Z  * [new ref]         ad235c5186277283c8f485b7805cf9c0233841c5 -> origin/main
+Android smoke	Checkout	2025-12-12T07:39:12.2641287Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:12.2644942Z ##[group]Determining the checkout info
+Android smoke	Checkout	2025-12-12T07:39:12.2647720Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:12.2649275Z [command]/usr/bin/git sparse-checkout disable
+Android smoke	Checkout	2025-12-12T07:39:12.2690010Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Android smoke	Checkout	2025-12-12T07:39:12.2719217Z ##[group]Checking out the ref
+Android smoke	Checkout	2025-12-12T07:39:12.2723007Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Android smoke	Checkout	2025-12-12T07:39:12.2931144Z Switched to a new branch 'main'
+Android smoke	Checkout	2025-12-12T07:39:12.2933546Z branch 'main' set up to track 'origin/main'.
+Android smoke	Checkout	2025-12-12T07:39:12.2941703Z ##[endgroup]
+Android smoke	Checkout	2025-12-12T07:39:12.2978577Z [command]/usr/bin/git log -1 --format=%H
+Android smoke	Checkout	2025-12-12T07:39:12.3000563Z ad235c5186277283c8f485b7805cf9c0233841c5
+Android smoke	Setup Node.js	∩╗┐2025-12-12T07:39:12.3376531Z ##[group]Run actions/setup-node@v4
+Android smoke	Setup Node.js	2025-12-12T07:39:12.3377673Z with:
+Android smoke	Setup Node.js	2025-12-12T07:39:12.3378464Z   node-version: 18
+Android smoke	Setup Node.js	2025-12-12T07:39:12.3379350Z   always-auth: false
+Android smoke	Setup Node.js	2025-12-12T07:39:12.3380444Z   check-latest: false
+Android smoke	Setup Node.js	2025-12-12T07:39:12.3381619Z   token: ***
+Android smoke	Setup Node.js	2025-12-12T07:39:12.3382428Z ##[endgroup]
+Android smoke	Setup Node.js	2025-12-12T07:39:12.5168009Z Attempting to download 18...
+Android smoke	Setup Node.js	2025-12-12T07:39:12.9728913Z Acquiring 18.20.8 - x64 from https://github.com/actions/node-versions/releases/download/18.20.8-14110393767/node-18.20.8-linux-x64.tar.gz
+Android smoke	Setup Node.js	2025-12-12T07:39:13.3385445Z Extracting ...
+Android smoke	Setup Node.js	2025-12-12T07:39:13.3497145Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/55375767-957e-4fa4-a5a8-0f5bcf56df03 -f /home/runner/work/_temp/a537306e-afb2-4862-8ad4-85e358a81329
+Android smoke	Setup Node.js	2025-12-12T07:39:14.3265844Z Adding to the cache ...
+Android smoke	Setup Node.js	2025-12-12T07:39:16.0172647Z ##[group]Environment details
+Android smoke	Setup Node.js	2025-12-12T07:39:16.2524975Z node: v18.20.8
+Android smoke	Setup Node.js	2025-12-12T07:39:16.2525911Z npm: 10.8.2
+Android smoke	Setup Node.js	2025-12-12T07:39:16.2526673Z yarn: 1.22.22
+Android smoke	Setup Node.js	2025-12-12T07:39:16.2527662Z ##[endgroup]
+Android smoke	Install JDK	∩╗┐2025-12-12T07:39:16.2732698Z ##[group]Run actions/setup-java@v4
+Android smoke	Install JDK	2025-12-12T07:39:16.2732999Z with:
+Android smoke	Install JDK	2025-12-12T07:39:16.2733189Z   distribution: temurin
+Android smoke	Install JDK	2025-12-12T07:39:16.2733424Z   java-version: 17
+Android smoke	Install JDK	2025-12-12T07:39:16.2733629Z   java-package: jdk
+Android smoke	Install JDK	2025-12-12T07:39:16.2733835Z   check-latest: false
+Android smoke	Install JDK	2025-12-12T07:39:16.2734049Z   server-id: github
+Android smoke	Install JDK	2025-12-12T07:39:16.2734249Z   server-username: GITHUB_ACTOR
+Android smoke	Install JDK	2025-12-12T07:39:16.2734512Z   server-password: GITHUB_TOKEN
+Android smoke	Install JDK	2025-12-12T07:39:16.2734781Z   overwrite-settings: true
+Android smoke	Install JDK	2025-12-12T07:39:16.2735014Z   job-status: success
+Android smoke	Install JDK	2025-12-12T07:39:16.2735336Z   token: ***
+Android smoke	Install JDK	2025-12-12T07:39:16.2735523Z ##[endgroup]
+Android smoke	Install JDK	2025-12-12T07:39:16.4678143Z ##[group]Installed distributions
+Android smoke	Install JDK	2025-12-12T07:39:16.4869207Z Resolved Java 17.0.17+10 from tool-cache
+Android smoke	Install JDK	2025-12-12T07:39:16.4869936Z Setting Java 17.0.17+10 as the default
+Android smoke	Install JDK	2025-12-12T07:39:16.4877118Z Creating toolchains.xml for JDK version 17 from temurin
+Android smoke	Install JDK	2025-12-12T07:39:16.4954044Z Writing to /home/runner/.m2/toolchains.xml
+Android smoke	Install JDK	2025-12-12T07:39:16.4954434Z 
+Android smoke	Install JDK	2025-12-12T07:39:16.4954735Z Java configuration:
+Android smoke	Install JDK	2025-12-12T07:39:16.4955858Z   Distribution: temurin
+Android smoke	Install JDK	2025-12-12T07:39:16.4956424Z   Version: 17.0.17+10
+Android smoke	Install JDK	2025-12-12T07:39:16.4957221Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Install JDK	2025-12-12T07:39:16.4957702Z 
+Android smoke	Install JDK	2025-12-12T07:39:16.4958108Z ##[endgroup]
+Android smoke	Install JDK	2025-12-12T07:39:16.4961916Z Creating settings.xml with server-id: github
+Android smoke	Install JDK	2025-12-12T07:39:16.4978101Z Writing to /home/runner/.m2/settings.xml
+Android smoke	Android Emulator Build and Test	∩╗┐2025-12-12T07:39:16.5130038Z ##[group]Run reactivecircus/android-emulator-runner@v2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5130382Z with:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5130565Z   api-level: 29
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5130749Z   target: default
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5130936Z   arch: x86_64
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5131121Z   force-avd-creation: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5131559Z   emulator-options: -no-window -no-audio -gpu swiftshader_indirect -no-snapshot -no-boot-anim -accel off
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5135717Z   script: set -e
+Android smoke	Android Emulator Build and Test	echo "=== Checking adb devices ==="
+Android smoke	Android Emulator Build and Test	adb wait-for-device
+Android smoke	Android Emulator Build and Test	adb devices -l
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Installing node dependencies ==="
+Android smoke	Android Emulator Build and Test	npm ci --legacy-peer-deps
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Running tests (unit + smoke) ==="
+Android smoke	Android Emulator Build and Test	npm test --silent
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Prebuilding Android project ==="
+Android smoke	Android Emulator Build and Test	npx expo prebuild --platform android --no-install
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Waiting for emulator boot to complete ==="
+Android smoke	Android Emulator Build and Test	# Wait for boot_completed property
+Android smoke	Android Emulator Build and Test	MAX_WAIT=120
+Android smoke	Android Emulator Build and Test	WAITED=0
+Android smoke	Android Emulator Build and Test	while [ "$WAITED" -lt $MAX_WAIT ]; do
+Android smoke	Android Emulator Build and Test	  BOOT_COMPLETED=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || echo "")
+Android smoke	Android Emulator Build and Test	  if [ "$BOOT_COMPLETED" = "1" ]; then
+Android smoke	Android Emulator Build and Test	    echo "Emulator boot completed!"
+Android smoke	Android Emulator Build and Test	    break
+Android smoke	Android Emulator Build and Test	  fi
+Android smoke	Android Emulator Build and Test	  echo "Waiting for boot... ($WAITED/$MAX_WAIT seconds)"
+Android smoke	Android Emulator Build and Test	  sleep 5
+Android smoke	Android Emulator Build and Test	  WAITED=$((WAITED + 5))
+Android smoke	Android Emulator Build and Test	done
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	if [ "$BOOT_COMPLETED" != "1" ]; then
+Android smoke	Android Emulator Build and Test	  echo "Warning: Boot did not complete within timeout, proceeding anyway..."
+Android smoke	Android Emulator Build and Test	fi
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Emulator status ==="
+Android smoke	Android Emulator Build and Test	adb devices -l
+Android smoke	Android Emulator Build and Test	adb shell getprop ro.build.version.sdk || true
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Building and installing app via expo run:android ==="
+Android smoke	Android Emulator Build and Test	# CI=1 env var enables non-interactive mode for Expo
+Android smoke	Android Emulator Build and Test	npx expo run:android --variant debug || {
+Android smoke	Android Emulator Build and Test	  echo "expo run:android failed. Capturing diagnostics..." >&2
+Android smoke	Android Emulator Build and Test	  echo "=== ADB devices ===" >&2
+Android smoke	Android Emulator Build and Test	  adb devices -l || true
+Android smoke	Android Emulator Build and Test	  echo "=== Logcat (last 200 lines) ===" >&2
+Android smoke	Android Emulator Build and Test	  adb logcat -d | tail -200 || true
+Android smoke	Android Emulator Build and Test	  exit 1
+Android smoke	Android Emulator Build and Test	}
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Build and install succeeded ==="
+Android smoke	Android Emulator Build and Test	echo "=== Verifying app installation ==="
+Android smoke	Android Emulator Build and Test	adb shell pm list packages | grep -E "expo|clearsend" || echo "Package not found in list"
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	echo "=== Android smoke test completed successfully ==="
+Android smoke	Android Emulator Build and Test	
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5140351Z   cores: 2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5140541Z   avd-name: test
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5140738Z   emulator-boot-timeout: 600
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5140967Z   emulator-port: 5554
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5141168Z   disable-animations: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5141393Z   disable-spellchecker: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5141625Z   disable-linux-hw-accel: auto
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5141861Z   enable-hw-keyboard: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5142083Z   channel: stable
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5142275Z env:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5142561Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5143010Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5143354Z   CI: 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5143517Z ##[endgroup]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5674278Z ##[group]Configure emulator
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5681740Z You're running a Linux VM where hardware acceleration is not available. Please consider using a macOS VM instead to take advantage of native hardware acceleration support provided by HAXM.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5683821Z API level: 29
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5684440Z System image API level: 29
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5684963Z target: default
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5685560Z CPU architecture: x86_64
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5686357Z Hardware profile: 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5686866Z Cores: 2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5687307Z RAM size: 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5687780Z Heap size: 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5688318Z SD card path or size: 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5688889Z Disk size: 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5689372Z AVD name: test
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5689883Z force avd creation: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5690574Z Emulator boot timeout: 600
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5691245Z emulator port: 5554
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5693112Z emulator options: -no-window -no-audio -gpu swiftshader_indirect -no-snapshot -no-boot-anim -accel off
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5694293Z disable animations: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5694675Z disable spellchecker: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5695213Z disable Linux hardware acceleration: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5695792Z enable hardware keyboard: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5698128Z Channel: 0 (stable)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5699815Z Script:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5700510Z set -e
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5701181Z echo "=== Checking adb devices ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5701672Z adb wait-for-device
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5702017Z adb devices -l
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5703931Z echo "=== Installing node dependencies ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5704666Z npm ci --legacy-peer-deps
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5705324Z echo "=== Running tests (unit + smoke) ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5705893Z npm test --silent
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5706762Z echo "=== Prebuilding Android project ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5707583Z npx expo prebuild --platform android --no-install
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5708469Z echo "=== Waiting for emulator boot to complete ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5709049Z MAX_WAIT=120
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5709440Z WAITED=0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5709958Z while [ "$WAITED" -lt $MAX_WAIT ]; do
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5711015Z BOOT_COMPLETED=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || echo "")
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5711961Z if [ "$BOOT_COMPLETED" = "1" ]; then
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5712642Z echo "Emulator boot completed!"
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5713114Z break
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5713433Z fi
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5714008Z echo "Waiting for boot... ($WAITED/$MAX_WAIT seconds)"
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5714562Z sleep 5
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5714981Z WAITED=$((WAITED + 5))
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5715378Z done
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5715819Z if [ "$BOOT_COMPLETED" != "1" ]; then
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5716841Z echo "Warning: Boot did not complete within timeout, proceeding anyway..."
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5717432Z fi
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5718002Z echo "=== Emulator status ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5718267Z adb devices -l
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5718607Z adb shell getprop ro.build.version.sdk || true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5719079Z echo "=== Building and installing app via expo run:android ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5719515Z npx expo run:android --variant debug || {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5719974Z echo "expo run:android failed. Capturing diagnostics..." >&2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5720359Z echo "=== ADB devices ===" >&2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5720630Z adb devices -l || true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5720951Z echo "=== Logcat (last 200 lines) ===" >&2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5721290Z adb logcat -d | tail -200 || true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5721537Z exit 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5721715Z }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5721995Z echo "=== Build and install succeeded ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5722366Z echo "=== Verifying app installation ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5722936Z adb shell pm list packages | grep -E "expo|clearsend" || echo "Package not found in list"
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5723563Z echo "=== Android smoke test completed successfully ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5723921Z Pre emulator launch script:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5724340Z ##[endgroup]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5724671Z ##[group]Install Android SDK
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:16.5920726Z [command]/usr/bin/sh -c \yes | sdkmanager --licenses > /dev/null
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:21.9859586Z Installing latest build tools, platform tools, and platform.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:21.9879039Z [command]/usr/bin/sh -c \sdkmanager --install 'build-tools;35.0.0' platform-tools 'platforms;android-29'> /dev/null
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:27.4415591Z Installing latest emulator.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:27.4431172Z [command]/usr/bin/sh -c \sdkmanager --install emulator --channel=0 > /dev/null
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:34.9046087Z Installing system images.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:34.9061075Z [command]/usr/bin/sh -c \sdkmanager --install 'system-images;android-29;default;x86_64' --channel=0 > /dev/null
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.0354031Z ##[endgroup]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.0356431Z ##[group]Create AVD
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.0357142Z Creating AVD.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.0372592Z [command]/usr/bin/sh -c \echo no | avdmanager create avd --force -n test --abi 'default/x86_64' --package 'system-images;android-29;default;x86_64'
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.7956941Z Loading local repository...                                                     
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.7958043Z [=========                              ] 25% Loading local repository...       
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.7959154Z [=========                              ] 25% Fetch remote repository...        
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.7959801Z [=======================================] 100% Fetch remote repository...       
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.9883127Z Do you wish to create a custom hardware profile? [no] [command]/usr/bin/sh -c \printf 'hw.cpu.ncore=2\n' >> /home/runner/.android/avd/test.avd/config.ini
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.9904304Z ##[endgroup]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.9906326Z ##[group]Launch Emulator
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.9906890Z Disabling Linux hardware acceleration.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.9907399Z Starting emulator.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:58.9925832Z [command]/usr/bin/sh -c \/usr/local/lib/android/sdk/emulator/emulator -port 5554 -avd test -no-window -no-audio -gpu swiftshader_indirect -no-snapshot -no-boot-anim -accel off -accel off &
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.0054440Z INFO         | Android emulator version 36.3.10.0 (build_id 14472402) (CL:N/A)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.0055057Z INFO         | Graphics backend: gfxstream
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.0055659Z INFO         | Found systemPath /usr/local/lib/android/sdk/system-images/android-29/default/x86_64/
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3003661Z ProbeKVM: This user doesn't have permissions to use KVM (/dev/kvm).
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3005162Z The KVM line in /etc/group is: [kvm:x:993:]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3005902Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3006539Z If the current user has KVM permissions,
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3007250Z the KVM line in /etc/group should end with ":" followed by your username.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3007659Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3008127Z If we see LINE_NOT_FOUND, the kvm group may need to be created along with permissions:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3009007Z     sudo groupadd -r kvm
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3009655Z     # Then ensure /lib/udev/rules.d/50-udev-default.rules contains something like:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3010292Z     # KERNEL=="kvm", GROUP="kvm", MODE="0660"
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3010825Z     # and then run:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3011176Z     sudo gpasswd -a $USER kvm
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3011449Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3012271Z If we see kvm:... but no username at the end, running the following command may allow KVM access:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3013113Z     sudo gpasswd -a $USER kvm
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3013449Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3013983Z You may need to log out and back in for changes to take effect.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.3014548Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5276373Z INFO         | Increasing RAM size to 2048MB
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5277229Z ##############################################################################
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5277787Z ##                        WARNING - ACTION REQUIRED                         ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5278413Z ##  Consider using the '-metrics-collection' flag to help improve the       ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5279058Z ##  emulator by sending anonymized usage data. Or use the '-no-metrics'     ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5279696Z ##  flag to bypass this warning and turn off the metrics collection.        ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5280314Z ##  In a future release this warning will turn into a one-time blocking     ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5280944Z ##  prompt to ask for explicit user input regarding metrics collection.     ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5281467Z ##                                                                          ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5282008Z ##  Please see '-help-metrics-collection' for more details. You can use     ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5282654Z ##  '-metrics-to-file' or '-metrics-to-console' flags to see what type of   ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5283297Z ##  data is being collected by emulator as part of usage statistics.        ##
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5283821Z ##############################################################################
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5284261Z INFO         | Guest GLES Driver: Auto (ext controls)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5284776Z library_mode swiftshader_indirect gpu mode swiftshader_indirect
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5285333Z WARNING      | FeatureControl is requesting a non existing feature.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5285807Z INFO         | Checking system compatibility:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5286655Z INFO         |   Checking: hasSufficientDiskSpace
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5287187Z INFO         |      Ok: Disk space requirements to run avd: `test` are met
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5287654Z INFO         |   Checking: hasSufficientHwGpu
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5288136Z INFO         |      Ok: Hardware GPU compatibility checks are not required
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5288584Z INFO         |   Checking: hasSufficientSystem
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5289047Z INFO         |      Ok: System requirements to run avd: `test` are met
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5289591Z WARNING      | x86_64 emulation may not work without hardware acceleration!
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5290170Z WARNING      | FeatureControl is requesting a non existing feature.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5290688Z ERROR        | Unable to connect to adb daemon on port: 5037
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5291445Z INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-36.3.10.db, detection is enabled for process: 2532
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5292088Z INFO         | Initializing gfxstream backend
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5292518Z INFO         | android_startOpenglesRenderer: gpu info
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5293015Z INFO         | 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5293447Z INFO         | initIcdPaths: ICD set to 'swiftshader', using Swiftshader ICD
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5294315Z INFO         | Setting ICD filenames for the loader = /usr/local/lib/android/sdk/emulator/lib64/vulkan/vk_swiftshader_icd.json
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5295246Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5296778Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5297862Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5299210Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so] (posix,linux): call dlopen on [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5300588Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so] failed (posix). dlerror: []
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5301521Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5302550Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5303606Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5304972Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1] (posix,linux): call dlopen on [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5306494Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1] failed (posix). dlerror: []
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5307952Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5601551Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5603011Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5604253Z INFO         | SharedLibrary::open for [/usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so] (posix,linux): call dlopen on [/usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5605661Z INFO         | SharedLibrary::open succeeded for [/usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so].
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5606656Z INFO         | Added library: /usr/local/lib/android/sdk/emulator/lib64/vulkan/libvulkan.so
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5607280Z INFO         | Selecting Vulkan device: SwiftShader Device (Subzero), Version: 1.3.0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5607748Z INFO         | Disabling sparse binding feature support
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5608313Z INFO         | SharedLibrary::open for [libGLESv2.so]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5608897Z INFO         | SharedLibrary::open for [libGLESv2.so] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5609489Z INFO         | SharedLibrary::open for [libGLESv2.so] (posix,linux): call dlopen on [libGLESv2.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5610035Z INFO         | SharedLibrary::open succeeded for [libGLESv2.so].
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5610584Z INFO         | SharedLibrary::open for [libEGL.so]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5611112Z INFO         | SharedLibrary::open for [libEGL.so] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5611668Z INFO         | SharedLibrary::open for [libEGL.so] (posix,linux): call dlopen on [libEGL.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5612188Z INFO         | SharedLibrary::open succeeded for [libEGL.so].
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5612565Z INFO         | SharedLibrary::open for [libX11]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5613066Z INFO         | SharedLibrary::open for [libX11]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5613573Z INFO         | SharedLibrary::open for [libX11] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5614088Z INFO         | SharedLibrary::open for [libX11] (posix,linux): call dlopen on [libX11.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5614834Z INFO         | SharedLibrary::open for [libX11] failed (posix). dlerror: []
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5615276Z WARNING      | Could not open libX11.so, try libX11.so.6
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5615763Z INFO         | SharedLibrary::open for [libX11.so.6]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5616478Z INFO         | SharedLibrary::open for [libX11.so.6]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5617006Z INFO         | SharedLibrary::open for [libX11.so.6] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5617902Z INFO         | SharedLibrary::open for [libX11.so.6] (posix,linux): call dlopen on [libX11.so.6]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5618804Z INFO         | SharedLibrary::open succeeded for [libX11.so.6].
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5619476Z INFO         | SharedLibrary::open for [libX11-xcb]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5620336Z INFO         | SharedLibrary::open for [libX11-xcb]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5621194Z INFO         | SharedLibrary::open for [libX11-xcb] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5622114Z INFO         | SharedLibrary::open for [libX11-xcb] (posix,linux): call dlopen on [libX11-xcb.so]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5623065Z INFO         | SharedLibrary::open for [libX11-xcb] failed (posix). dlerror: []
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5623862Z WARNING      | Could not open libX11-xcb.so, try libX11-xcb.so.1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5624554Z INFO         | SharedLibrary::open for [libX11-xcb.so.1]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5625439Z INFO         | SharedLibrary::open for [libX11-xcb.so.1]: not found in map, open for the first time
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5626524Z INFO         | SharedLibrary::open for [libX11-xcb.so.1] (posix): begin
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5627565Z INFO         | SharedLibrary::open for [libX11-xcb.so.1] (posix,linux): call dlopen on [libX11-xcb.so.1]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5628511Z INFO         | SharedLibrary::open succeeded for [libX11-xcb.so.1].
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5629157Z INFO         | Initializing VkEmulation features:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5629745Z INFO         |     glInteropSupported: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5630293Z INFO         |     useDeferredCommands: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5630880Z INFO         |     createResourceWithRequirements: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5631478Z INFO         |     useVulkanComposition: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5632059Z INFO         |     useVulkanNativeSwapchain: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5632853Z INFO         |     enable guestRenderDoc: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5633413Z INFO         |     ASTC LDR emulation mode: Gpu
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5633965Z INFO         |     enable ETC2 emulation: true
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5634548Z INFO         |     enable Ycbcr emulation: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5634882Z INFO         |     guestVulkanOnly: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5635219Z INFO         |     useDedicatedAllocations: false
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5635613Z INFO         | Graphics Adapter Vendor Google (Google Inc.)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5636126Z INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (Google SwiftShader)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5636965Z INFO         | Graphics API Version OpenGL ES 3.0 (OpenGL ES 3.0 SwiftShader 4.0.0.1)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5818856Z INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texturWARNING: cannnot unmap ptr 0x7efecee01000 as it is in the protected range from 0x7efe4ee00000 to 0x7efecf000000
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5944317Z e_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_standard_derivatives GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5946992Z INFO         | Graphics Device Extensions N/A
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5947627Z INFO         | Userspace boot properties:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5948472Z INFO         |   android.bootanim=0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5948980Z INFO         |   android.qemud=1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5949810Z INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5950605Z INFO         |   androidboot.hardware=ranchu
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5951238Z INFO         |   androidboot.hardware.vulkan=ranchu
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5951933Z INFO         |   androidboot.serialno=EMULATOR36X3X10X0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5952996Z INFO         |   androidboot.vbmeta.digest=0893f0f3bac935802e7658f39b766acd7344cd0553606784a98cb6a38c2a8629
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5954100Z INFO         |   androidboot.vbmeta.hash_alg=sha256
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5954716Z INFO         |   androidboot.vbmeta.size=4352
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5955213Z INFO         |   qemu=1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5955617Z INFO         |   qemu.avd_name=test
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5956019Z INFO         |   qemu.camera_hq_edge_processing=0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5956669Z INFO         |   qemu.dalvik.vm.heapsize=512m
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5957064Z INFO         |   qemu.encrypt=1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5957385Z INFO         |   qemu.gles=1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5957740Z INFO         |   qemu.gltransport=pipe
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5958183Z INFO         |   qemu.gltransport.drawFlushInterval=800
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5958640Z INFO         |   qemu.opengles.version=196608
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5959147Z INFO         |   qemu.settings.system.screen_off_timeout=2147483647
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5959607Z INFO         |   qemu.uirenderer=skiagl
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5959968Z INFO         |   qemu.vsync=60
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5960262Z INFO         |   qemu.wifi=1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5960733Z TCG doesn't support requested feature: CPUID.01H:ECX.avx [bit 28]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5961333Z TCG doesn't support requested feature: CPUID.01H:ECX.f16c [bit 29]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5961920Z TCG doesn't support requested feature: CPUID.01H:ECX.avx [bit 28]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5962510Z TCG doesn't support requested feature: CPUID.01H:ECX.f16c [bit 29]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.5963034Z INFO         | Monitoring duration of emulator setup.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.6114758Z INFO         | Setting display: 0 configuration to: 320x640, dpi: 160x160 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.6115845Z INFO         | setDisplayActiveConfig 0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.6184948Z USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.6189443Z WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:39:59.7089638Z WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:08.9976883Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:09.0007919Z * daemon not running; starting now at tcp:5037
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:12.0472879Z * daemon started successfully
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:12.0474721Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:12.0484056Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:14.0531596Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:14.0583310Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:14.0584294Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:16.0598828Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:16.0633158Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:16.0639767Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:18.0681235Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:18.0714298Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:18.0720131Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:20.0742815Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:20.0773671Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:20.0780836Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:22.0823772Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:22.0853747Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:22.0860153Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:24.0898445Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:24.0930911Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:24.0937272Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:26.0977133Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:26.1007516Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:26.1013703Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:28.1061927Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:28.1094993Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:28.1101471Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:30.1141998Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:30.1172239Z adb: device offline
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:30.1178552Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:32.1221349Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:34.4827095Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:36.4881999Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:38.7509639Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:40.9978574Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:42.4477693Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:44.4607700Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:45.4698052Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:47.4917564Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:48.0512861Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:50.1198720Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:50.4624024Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:52.4766689Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:52.7941617Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:54.7990486Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:55.1080635Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:57.1276741Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:57.4726556Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:59.4774925Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:40:59.8325311Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:01.8357619Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:02.1304220Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:04.1340413Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:04.5595344Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:06.5707850Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:07.1622235Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:09.1859207Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:09.4722425Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:11.4814897Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:12.1543286Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:14.1917388Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:14.7419784Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:16.7569015Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:17.3843112Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:19.4097234Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:20.2507594Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:22.2554226Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:22.5330135Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:24.5481086Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:24.9122956Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:26.9504175Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:27.4233735Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:29.4416462Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:29.8521197Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:31.8781926Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:32.6003258Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:34.6170405Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:35.2007051Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:37.2250428Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:37.6621060Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:39.6665621Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:40.4897180Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:42.4958701Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:44.3691427Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:46.3738123Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:48.2507446Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:50.3768710Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:51.1308688Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:53.1437289Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:54.0177308Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:56.0226333Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:57.8433740Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:41:59.8483221Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:01.0164094Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:03.1439903Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:04.7172630Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:06.7275862Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:09.0010797Z 1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:09.0016691Z Emulator booted.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:09.0035047Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell input keyevent 82
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:16.3684631Z INFO         | Boot completed in 137339 ms
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:16.3685916Z INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:29.9779445Z Disabling animations.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:29.9800700Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell settings put global window_animation_scale 0.0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:31.7126597Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell settings put global transition_animation_scale 0.0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:35.9387436Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell settings put global animator_duration_scale 0.0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8761739Z ##[endgroup]
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8780473Z [command]/usr/bin/sh -c set -e
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8815915Z [command]/usr/bin/sh -c echo "=== Checking adb devices ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8829913Z === Checking adb devices ===
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8855772Z [command]/usr/bin/sh -c adb wait-for-device
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8912690Z [command]/usr/bin/sh -c adb devices -l
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8942352Z List of devices attached
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8943653Z emulator-5554          device product:sdk_phone_x86_64 model:Android_SDK_built_for_x86_64 device:generic_x86_64 transport_id:1
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8944314Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8971436Z [command]/usr/bin/sh -c echo "=== Installing node dependencies ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.8985461Z === Installing node dependencies ===
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:39.9022066Z [command]/usr/bin/sh -c npm ci --legacy-peer-deps
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2745805Z npm warn EBADENGINE Unsupported engine {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2748366Z npm warn EBADENGINE   package: '@isaacs/balanced-match@4.0.1',
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2749407Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2750363Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2751129Z npm warn EBADENGINE }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2755516Z npm warn EBADENGINE Unsupported engine {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2757348Z npm warn EBADENGINE   package: '@isaacs/brace-expansion@5.0.0',
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2758114Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2758833Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2759369Z npm warn EBADENGINE }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2802413Z npm warn EBADENGINE Unsupported engine {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2803307Z npm warn EBADENGINE   package: 'glob@13.0.0',
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2809643Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2810424Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2810994Z npm warn EBADENGINE }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2829738Z npm warn EBADENGINE Unsupported engine {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2832338Z npm warn EBADENGINE   package: 'minimatch@10.1.1',
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2833022Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2833760Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2834330Z npm warn EBADENGINE }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2888043Z npm warn EBADENGINE Unsupported engine {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2889574Z npm warn EBADENGINE   package: 'path-scurry@2.0.1',
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2891750Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2892496Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2893045Z npm warn EBADENGINE }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2893507Z npm warn EBADENGINE Unsupported engine {
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2894098Z npm warn EBADENGINE   package: 'lru-cache@11.2.4',
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2894776Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2895541Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:41.2896125Z npm warn EBADENGINE }
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:45.3279282Z npm warn deprecated sudo-prompt@9.1.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:45.4102289Z npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:45.8194303Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:46.0698125Z npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:46.4948517Z npm warn deprecated osenv@0.1.5: This package is no longer supported.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:46.8943548Z npm warn deprecated metro-react-native-babel-preset@0.73.9: Use @react-native/babel-preset instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:47.0880129Z npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:47.7058397Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:47.8909203Z npm warn deprecated uglify-es@3.3.10: support for ECMAScript is superseded by `uglify-js` as of v3.13.0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:48.0652564Z npm warn deprecated glob@7.1.6: Glob versions prior to v9 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:48.5162284Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:49.3999399Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:49.8313023Z npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:49.8831497Z npm warn deprecated @xmldom/xmldom@0.7.13: this version is no longer supported, please update to at least 0.8.*
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7492919Z npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7501981Z npm warn deprecated @babel/plugin-proposal-optional-catch-binding@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7505385Z npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7885308Z npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7892921Z npm warn deprecated @babel/plugin-proposal-async-generator-functions@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7902190Z npm warn deprecated @babel/plugin-proposal-object-rest-spread@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:50.7906679Z npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:51.2916718Z npm warn deprecated rimraf@2.2.8: Rimraf versions prior to v4 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:51.7285752Z npm warn deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:51.7288058Z npm warn deprecated glob@6.0.4: Glob versions prior to v9 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:51.9125392Z npm warn deprecated metro-react-native-babel-preset@0.73.10: Use @react-native/babel-preset instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:52.0450129Z npm warn deprecated metro-react-native-babel-preset@0.73.10: Use @react-native/babel-preset instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:52.1904885Z npm warn deprecated metro-react-native-babel-preset@0.76.9: Use @react-native/babel-preset instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:52.2706070Z npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:53.5533986Z npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+Android smoke	Android Emulator Build and Test	2025-12-12T07:42:53.9868575Z npm warn deprecated metro-react-native-babel-preset@0.73.10: Use @react-native/babel-preset instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:03.9972774Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:03.9973734Z added 1846 packages, and audited 1847 packages in 24s
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:03.9974171Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:03.9974425Z 196 packages are looking for funding
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:03.9974933Z   run `npm fund` for details
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0748247Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0749539Z 18 vulnerabilities (1 low, 3 moderate, 14 high)
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0750135Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0750608Z To address issues that do not require attention, run:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0751317Z   npm audit fix
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0751701Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0752379Z To address all issues (including breaking changes), run:
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0753706Z   npm audit fix --force
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0754126Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.0754574Z Run `npm audit` for details.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.1223238Z [command]/usr/bin/sh -c echo "=== Running tests (unit + smoke) ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.1241322Z === Running tests (unit + smoke) ===
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:04.1262357Z [command]/usr/bin/sh -c npm test --silent
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:07.3027811Z PASS src/contexts/__tests__/BalanceContext.test.tsx
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5554428Z PASS src/screens/__tests__/ConfirmFlow.test.tsx
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5833012Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5834821Z Test Suites: 2 passed, 2 total
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5835412Z Tests:       3 passed, 3 total
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5836086Z Snapshots:   0 total
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5837246Z Time:        3.441 s
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.5838337Z Ran all test suites.
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.6736299Z [command]/usr/bin/sh -c echo "=== Prebuilding Android project ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.6757663Z === Prebuilding Android project ===
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:08.6777449Z [command]/usr/bin/sh -c npx expo prebuild --platform android --no-install
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:09.6927898Z - Creating native project directories (./ios and ./android) and updating .gitignore
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.5960080Z Γ£ö Created native project | gitignore skipped
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.5960742Z - Adding Metro bundler config
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.5961293Z Γ£ö Added Metro config
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.5967855Z - Updating your package.json scripts, dependencies, and main file
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.6007614Z Γ£ö Updated package.json and added index.js entry point for iOS and Android
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.6009166Z ΓÇ║ Removed "main": "node_modules/expo/AppEntry.js" from package.json because we recommend using index.js as main instead
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.6010439Z 
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.6010603Z - Config syncing
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.8793687Z Γ£ö Config synced
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9052334Z [command]/usr/bin/sh -c echo "=== Waiting for emulator boot to complete ==="
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9071705Z === Waiting for emulator boot to complete ===
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9093592Z [command]/usr/bin/sh -c MAX_WAIT=120
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9132053Z [command]/usr/bin/sh -c WAITED=0
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9167472Z [command]/usr/bin/sh -c while [ "$WAITED" -lt $MAX_WAIT ]; do
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9183661Z /usr/bin/sh: 1: Syntax error: end of file unexpected (expecting "done")
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9217416Z ##[error]The process '/usr/bin/sh' failed with exit code 2
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9226471Z ##[group]Terminate Emulator
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9227323Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 emu kill
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9527874Z OK: killing emulator, bye bye
+Android smoke	Android Emulator Build and Test	2025-12-12T07:43:10.9533573Z ##[endgroup]
+Android smoke	Print Emulator Logs (if any)	∩╗┐2025-12-12T07:43:10.9641111Z ##[group]Run echo "=== Emulator log (if exists) ==="
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9641532Z [36;1mecho "=== Emulator log (if exists) ==="[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9641860Z [36;1m# Dynamically detect the AVD directory[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9642258Z [36;1mLOG_PATH=$(ls -1 $HOME/.android/avd/*.avd 2>/dev/null | head -n 1 || true)[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9642638Z [36;1mLOG_DIR="$LOG_PATH"[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9642848Z [36;1m[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9643029Z [36;1mif [ -z "$LOG_DIR" ]; then[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9643299Z [36;1m  echo "AVD directory not found."[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9643732Z [36;1melse[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9643939Z [36;1m  echo "Checking directory: $LOG_DIR"[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9644223Z [36;1m  # Print short tails from known log files[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9644646Z [36;1m  find "$LOG_DIR" -maxdepth 1 -name "*.log" -exec echo "--- {} ---" \; -exec tail -n 100 {} \;[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9645026Z [36;1mfi[0m
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9733219Z shell: /usr/bin/bash -e {0}
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9733498Z env:
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9733792Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9734279Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9734669Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9734930Z ##[endgroup]
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9813685Z === Emulator log (if exists) ===
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9839133Z Checking directory: bootcompleted.ini
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9851204Z find: ΓÇÿbootcompleted.iniΓÇÖ: No such file or directory
+Android smoke	Print Emulator Logs (if any)	2025-12-12T07:43:10.9859218Z ##[error]Process completed with exit code 1.
+Android smoke	Collect ADB diagnostics (logcat)	∩╗┐2025-12-12T07:43:10.9879255Z ##[group]Run echo "=== adb devices ==="
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9879563Z [36;1mecho "=== adb devices ==="[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9879814Z [36;1madb devices -l || true[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9880072Z [36;1mecho "=== GETPROP sys.boot_completed ==="[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9880430Z [36;1madb -s emulator-5554 shell getprop sys.boot_completed || true[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9880809Z [36;1mecho "=== adb shell dumpsys activity top (short) ==="[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9881236Z [36;1madb -s emulator-5554 shell dumpsys activity activities | head -n 40 || true[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9881641Z [36;1mecho "=== adb logcat dump (last 5K chars) ==="[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9881940Z [36;1madb -s emulator-5554 logcat -d || true[0m
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9914761Z shell: /usr/bin/bash -e {0}
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9914988Z env:
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9915272Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9915758Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9916415Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9916681Z ##[endgroup]
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9966595Z === adb devices ===
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9983857Z List of devices attached
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9984839Z emulator-5554          offline product:sdk_phone_x86_64 model:Android_SDK_built_for_x86_64 device:generic_x86_64 transport_id:1
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9985274Z 
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:10.9987973Z === GETPROP sys.boot_completed ===
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:11.0002636Z adb: device offline
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:11.0005541Z === adb shell dumpsys activity top (short) ===
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:11.0022093Z adb: device offline
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:11.0026442Z === adb logcat dump (last 5K chars) ===
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:43:11.0041436Z - waiting for device -
+Android smoke	Collect ADB diagnostics (logcat)	2025-12-12T07:45:23.4952337Z ##[error]The action 'Collect ADB diagnostics (logcat)' has timed out after 2 minutes.
+Android smoke	Collect installed packages and app path	∩╗┐2025-12-12T07:45:23.4973679Z ##[group]Run echo "=== Installed packages (filtered for expo/clearsend) ==="
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.4974204Z [36;1mecho "=== Installed packages (filtered for expo/clearsend) ==="[0m
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.4974711Z [36;1madb -s emulator-5554 shell pm list packages | grep -E "expo|clearsend|com.clearsend" || true[0m
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.4975172Z [36;1mecho "=== Possible ClearSend app path detail ==="[0m
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.4975797Z [36;1mfor p in $(adb -s emulator-5554 shell pm list packages | sed 's/package://g'); do adb -s emulator-5554 shell pm path $p || true; done | head -n 40 || true[0m
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5008918Z shell: /usr/bin/bash -e {0}
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5009140Z env:
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5009420Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5009862Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5010227Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5010643Z ##[endgroup]
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5063127Z === Installed packages (filtered for expo/clearsend) ===
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5082799Z adb: device 'emulator-5554' not found
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5087378Z === Possible ClearSend app path detail ===
+Android smoke	Collect installed packages and app path	2025-12-12T07:45:23.5108782Z adb: device 'emulator-5554' not found
+Android smoke	Save ADB logs and packages to workspace	∩╗┐2025-12-12T07:45:23.5138345Z ##[group]Run echo "Saving logcat and package list to workspace"
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5138771Z [36;1mecho "Saving logcat and package list to workspace"[0m
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5139175Z [36;1madb -s emulator-5554 logcat -d > android-logcat.txt || true[0m
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5139620Z [36;1madb -s emulator-5554 shell pm list packages > android-packages.txt || true[0m
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5169179Z shell: /usr/bin/bash -e {0}
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5169399Z env:
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5169683Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5170135Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5170512Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5170762Z ##[endgroup]
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5220291Z Saving logcat and package list to workspace
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:45:23.5237038Z - waiting for device -
+Android smoke	Save ADB logs and packages to workspace	2025-12-12T07:47:36.0153957Z ##[error]The action 'Save ADB logs and packages to workspace' has timed out after 2 minutes.
+Android smoke	Upload ADB diagnostics artifacts	∩╗┐2025-12-12T07:47:36.0194551Z ##[group]Run actions/upload-artifact@v4
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0194822Z with:
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0194999Z   name: android-diagnostics
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0195257Z   path: android-logcat.txt
+Android smoke	Upload ADB diagnostics artifacts	android-packages.txt
+Android smoke	Upload ADB diagnostics artifacts	
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0195546Z   if-no-files-found: warn
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0195766Z   compression-level: 6
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0195957Z   overwrite: false
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0196345Z   include-hidden-files: false
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0196567Z env:
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0196834Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0197275Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0197645Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.0197895Z ##[endgroup]
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.2500368Z Multiple search paths detected. Calculating the least common ancestor of all paths
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.2504477Z The least common ancestor is /home/runner/work/clearsend/clearsend. This will be the root directory of the artifact
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.2505791Z With the provided path, there will be 1 file uploaded
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.2511445Z Artifact name is valid!
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.2513428Z Root directory input is valid!
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6719154Z Beginning upload of artifact content to blob storage
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6720490Z Uploaded bytes 152
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6721195Z Finished uploading artifact content to blob storage!
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6722295Z SHA256 digest of uploaded artifact zip is e1f701d07f801cccc65088911fef569fba8a10abe6165906275242b84381f220
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6723141Z Finalizing artifact upload
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6725472Z Artifact android-diagnostics.zip successfully finalized. Artifact ID 4847672309
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6727082Z Artifact android-diagnostics has been successfully uploaded! Final size is 152 bytes. Artifact ID is 4847672309
+Android smoke	Upload ADB diagnostics artifacts	2025-12-12T07:47:36.6728662Z Artifact download URL: https://github.com/brockhager/clearsend/actions/runs/20159809517/artifacts/4847672309
+Android smoke	Post Install JDK	∩╗┐2025-12-12T07:47:36.6784876Z Post job cleanup.
+Android smoke	Post Checkout	∩╗┐2025-12-12T07:47:36.8705794Z Post job cleanup.
+Android smoke	Post Checkout	2025-12-12T07:47:37.0788499Z [command]/usr/bin/git version
+Android smoke	Post Checkout	2025-12-12T07:47:37.0788896Z git version 2.52.0
+Android smoke	Post Checkout	2025-12-12T07:47:37.0791059Z Temporarily overriding HOME='/home/runner/work/_temp/18745714-d593-4295-8f21-bb34cec9c188' before making global git config changes
+Android smoke	Post Checkout	2025-12-12T07:47:37.0792059Z Adding repository directory to the temporary git global config as a safe directory
+Android smoke	Post Checkout	2025-12-12T07:47:37.0792926Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/clearsend/clearsend
+Android smoke	Post Checkout	2025-12-12T07:47:37.0794071Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Android smoke	Post Checkout	2025-12-12T07:47:37.0795876Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Android smoke	Post Checkout	2025-12-12T07:47:37.0797571Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Android smoke	Post Checkout	2025-12-12T07:47:37.0798176Z http.https://github.com/.extraheader
+Android smoke	Post Checkout	2025-12-12T07:47:37.0799088Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Android smoke	Post Checkout	2025-12-12T07:47:37.0801076Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Android smoke	Post Checkout	2025-12-12T07:47:37.0803288Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Android smoke	Post Checkout	2025-12-12T07:47:37.0805037Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Android smoke	Complete job	∩╗┐2025-12-12T07:47:37.0848433Z Cleaning up orphan processes
+Android smoke	Complete job	2025-12-12T07:47:37.1157293Z Terminate orphan process: pid (2597) (adb)
+Android smoke	Complete job	2025-12-12T07:47:37.1205023Z Terminate orphan process: pid (2974) (adb)

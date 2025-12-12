@@ -54,6 +54,9 @@ jobs:
 
             # WAIT for the device to be recognized as 'device' (not 'offline') and for the boot to complete.
             echo "Ensuring ADB recognizes the emulator and boot is complete (timeout 120s)"
+            # Ensure host connects to emulator port explicitly (some runners need this)
+            adb connect 127.0.0.1:5554 || true
+            adb connect localhost:5554 || true
             adb start-server || true
             # Wait for device online status
             MAX_WAIT=120

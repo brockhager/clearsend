@@ -67,11 +67,15 @@ jobs:
       - name: Ensure ADB recognizes the emulator and boot is complete (timeout 120s)
         run: |
           echo "Attempting to stabilize ADB connection..."
+          # Give the emulator a moment to bind ports and fully launch its ADB server
+          sleep 10
           adb connect 127.0.0.1:5554 || true
           adb connect localhost:5554 || true
           adb start-server || true
+          # Attempt to forward host port 5554 to emulator 5554 in case the default path is blocked
+          adb forward tcp:5554 tcp:5554 || true
           
-          MAX_WAIT=120
+          MAX_WAIT=180
           WAITED=0
           INTERVAL=5
           DEVICE_STATE=""
@@ -100,7 +104,7 @@ jobs:
       - name: Build and install app to the emulator (expo run:android)
         run: |
           # Now attempt native build and install. Retry once if adb offline error occurs.
-          npx expo run:android --no-dev --variant debug --no-packager --non-interactive || {
+          npx expo run:android --variant debug --non-interactive || {
             echo "expo run:android failed on first attempt. Checking adb state(s)." >&2
             adb devices -l || true
             # If offline, try restarting adb and retry once
@@ -108,9 +112,9 @@ jobs:
               echo "Device offline detected; restarting adb and retrying..."
               adb kill-server || true
               adb start-server || true
-              sleep 3
-              adb wait-for-device || true
-              npx expo run:android --no-dev --variant debug --no-packager --non-interactive || {
+                sleep 3
+                adb wait-for-device || true
+                npx expo run:android --variant debug --non-interactive || {
                 echo "expo run:android failed again. Capturing debug information..." >&2
                 adb -s emulator-5554 logcat -d || true
                 exit 1

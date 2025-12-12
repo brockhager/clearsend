@@ -52,8 +52,8 @@ jobs:
             echo "=== Running tests (unit + smoke) ==="
             npm test --silent
             
-            echo "=== Prebuilding Android project ==="
-            npx expo prebuild --platform android --no-install
+            echo "=== Prebuilding Android project (clean) ==="
+            npx expo prebuild --platform android --clean --no-install
             
             echo "=== Emulator status ==="
             adb devices -l

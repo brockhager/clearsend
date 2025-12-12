@@ -28,9 +28,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK (AOSP x86_64, API 29)
+      - name: Android Emulator Build and Test
         uses: reactivecircus/android-emulator-runner@v2
-        timeout-minutes: 20
+        timeout-minutes: 25
+        env:
+          CI: 1
         with:
           api-level: 29
           target: default
@@ -39,94 +41,63 @@ jobs:
           # Set lightweight options; disable audio and headless window for speed
           emulator-options: -no-window -no-audio -gpu swiftshader_indirect -no-snapshot -no-boot-anim -accel off
           script: |
-            echo "Checking adb devices..."
+            set -e
+            echo "=== Checking adb devices ==="
             adb wait-for-device
-            adb devices
-            echo "Installing node dependencies..."
-            npm ci --legacy-peer-deps
-            echo "Running tests (unit + smoke)"
-            npm test --silent
-            echo "Starting Android native build - prebuilding (this may take a while)"
-            # Generate native Android project from managed expo (prebuild)
-            npx expo prebuild --platform android --no-install
-
-            echo "Building and installing app to the emulator via expo run:android"
+            adb devices -l
             
-            # Give the device some time to finish launching
-            sleep 10
-            ps aux | grep expo || true
-            # Extra emulator / qemu debug steps
-            echo "=== Emulator processes ==="
-            ps aux | grep -E 'emulator|qemu' || true
-            echo "=== AVD directory listing ==="
-            ls -la $HOME/.android/avd || true
-            # Emulator logs moved to a separate step to avoid YAML block splitting issues
-            adb devices
-            echo "Smoke checks completed"
-
-      - name: Ensure ADB recognizes the emulator and boot is complete (timeout 120s)
-        run: |
-          echo "Attempting to stabilize ADB connection..."
-          # Give the emulator a moment to bind ports and fully launch its ADB server
-          sleep 10
-          adb connect 127.0.0.1:5554 || true
-          adb connect localhost:5554 || true
-          adb start-server || true
-          # Attempt to forward host port 5554 to emulator 5554 in case the default path is blocked
-          adb forward tcp:5554 tcp:5554 || true
-          
-          MAX_WAIT=180
-          WAITED=0
-          INTERVAL=5
-          DEVICE_STATE=""
-          
-          while [ "$WAITED" -lt $MAX_WAIT ]; do
-            DEVICE_STATE=$(adb devices | awk '/emulator-5554/{print $2}') || true
-            echo "Current device state: $DEVICE_STATE"
-            if [ "$DEVICE_STATE" = "device" ]; then
-              echo "Device is online"
-              break
+            echo "=== Installing node dependencies ==="
+            npm ci --legacy-peer-deps
+            
+            echo "=== Running tests (unit + smoke) ==="
+            npm test --silent
+            
+            echo "=== Prebuilding Android project ==="
+            npx expo prebuild --platform android --no-install
+            
+            echo "=== Waiting for emulator boot to complete ==="
+            # Wait for boot_completed property
+            MAX_WAIT=120
+            WAITED=0
+            while [ "$WAITED" -lt $MAX_WAIT ]; do
+              BOOT_COMPLETED=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || echo "")
+              if [ "$BOOT_COMPLETED" = "1" ]; then
+                echo "Emulator boot completed!"
+                break
+              fi
+              echo "Waiting for boot... ($WAITED/$MAX_WAIT seconds)"
+              sleep 5
+              WAITED=$((WAITED + 5))
+            done
+            
+            if [ "$BOOT_COMPLETED" != "1" ]; then
+              echo "Warning: Boot did not complete within timeout, proceeding anyway..."
             fi
-            if [ "$DEVICE_STATE" = "offline" ]; then
-              echo "Device offline: restarting adb server"
-              adb kill-server || true
-              adb start-server || true
-              adb connect 127.0.0.1:5554 || true
-            fi
-            sleep $INTERVAL
-            WAITED=$((WAITED + INTERVAL))
-          done
-          
-          if [ "$DEVICE_STATE" != "device" ]; then
-            echo "Warning: device did not become 'device' within timeout."
-          fi
-
-      - name: Build and install app to the emulator (expo run:android)
-        run: |
-          # Now attempt native build and install. Retry once if adb offline error occurs.
-          npx expo run:android --variant debug --non-interactive || {
-            echo "expo run:android failed on first attempt. Checking adb state(s)." >&2
-            adb devices -l || true
-            # If offline, try restarting adb and retry once
-            if adb devices | grep -q 'offline'; then
-              echo "Device offline detected; restarting adb and retrying..."
-              adb kill-server || true
-              adb start-server || true
-                sleep 3
-                adb wait-for-device || true
-                npx expo run:android --variant debug --non-interactive || {
-                echo "expo run:android failed again. Capturing debug information..." >&2
-                adb -s emulator-5554 logcat -d || true
-                exit 1
-              }
-            else
-              echo "expo run:android failed for another reason; exiting" >&2
+            
+            echo "=== Emulator status ==="
+            adb devices -l
+            adb shell getprop ro.build.version.sdk || true
+            
+            echo "=== Building and installing app via expo run:android ==="
+            # CI=1 env var enables non-interactive mode for Expo
+            npx expo run:android --variant debug || {
+              echo "expo run:android failed. Capturing diagnostics..." >&2
+              echo "=== ADB devices ===" >&2
+              adb devices -l || true
+              echo "=== Logcat (last 200 lines) ===" >&2
+              adb logcat -d | tail -200 || true
               exit 1
-            fi
-          }
+            }
+            
+            echo "=== Build and install succeeded ==="
+            echo "=== Verifying app installation ==="
+            adb shell pm list packages | grep -E "expo|clearsend" || echo "Package not found in list"
+            
+            echo "=== Android smoke test completed successfully ==="
 
       - name: Print Emulator Logs (if any)
         if: always()
+        timeout-minutes: 2
         run: |
           echo "=== Emulator log (if exists) ==="
           # Dynamically detect the AVD directory
@@ -143,6 +114,7 @@ jobs:
 
       - name: Collect ADB diagnostics (logcat)
         if: always()
+        timeout-minutes: 2
         run: |
           echo "=== adb devices ==="
           adb devices -l || true
@@ -155,6 +127,7 @@ jobs:
 
       - name: Collect installed packages and app path
         if: always()
+        timeout-minutes: 2
         run: |
           echo "=== Installed packages (filtered for expo/clearsend) ==="
           adb -s emulator-5554 shell pm list packages | grep -E "expo|clearsend|com.clearsend" || true
@@ -163,6 +136,7 @@ jobs:
 
       - name: Save ADB logs and packages to workspace
         if: always()
+        timeout-minutes: 2
         run: |
           echo "Saving logcat and package list to workspace"
           adb -s emulator-5554 logcat -d > android-logcat.txt || true

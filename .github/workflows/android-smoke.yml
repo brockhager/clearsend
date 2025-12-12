@@ -55,39 +55,13 @@ jobs:
             echo "=== Prebuilding Android project ==="
             npx expo prebuild --platform android --no-install
             
-            echo "=== Waiting for emulator boot to complete ==="
-            # Wait for boot_completed property
-            MAX_WAIT=120
-            WAITED=0
-            while [ "$WAITED" -lt $MAX_WAIT ]; do
-              BOOT_COMPLETED=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r' || echo "")
-              if [ "$BOOT_COMPLETED" = "1" ]; then
-                echo "Emulator boot completed!"
-                break
-              fi
-              echo "Waiting for boot... ($WAITED/$MAX_WAIT seconds)"
-              sleep 5
-              WAITED=$((WAITED + 5))
-            done
-            
-            if [ "$BOOT_COMPLETED" != "1" ]; then
-              echo "Warning: Boot did not complete within timeout, proceeding anyway..."
-            fi
-            
             echo "=== Emulator status ==="
             adb devices -l
+            adb shell getprop sys.boot_completed || true
             adb shell getprop ro.build.version.sdk || true
             
             echo "=== Building and installing app via expo run:android ==="
-            # CI=1 env var enables non-interactive mode for Expo
-            npx expo run:android --variant debug || {
-              echo "expo run:android failed. Capturing diagnostics..." >&2
-              echo "=== ADB devices ===" >&2
-              adb devices -l || true
-              echo "=== Logcat (last 200 lines) ===" >&2
-              adb logcat -d | tail -200 || true
-              exit 1
-            }
+            npx expo run:android --variant debug
             
             echo "=== Build and install succeeded ==="
             echo "=== Verifying app installation ==="

@@ -60,23 +60,7 @@ jobs:
             ps aux | grep -E 'emulator|qemu' || true
             echo "=== AVD directory listing ==="
             ls -la $HOME/.android/avd || true
-            echo "=== Emulator log (if exists) ==="
-            LOG_PATH=$(ls -1 $HOME/.android/avd/*.avd 2>/dev/null | head -n 1 || true)
-            if [ -n "$LOG_PATH" ]; then
-              echo "AVD path: $LOG_PATH"
-              EMU_LOG="$LOG_PATH/emulator.log"
-              if [ -f "$EMU_LOG" ]; then
-                echo "----- emulator.log -----"
-                tail -n 200 "$EMU_LOG" || true
-                echo "----- end emulator.log -----"
-              fi
-              QEMU_LOG="$LOG_PATH/qemu.log"
-              if [ -f "$QEMU_LOG" ]; then
-                echo "----- qemu.log -----"
-                tail -n 200 "$QEMU_LOG" || true
-                echo "----- end qemu.log -----"
-              fi
-            fi
+            # Emulator logs moved to a separate step to avoid YAML block splitting issues
             adb devices
             echo "Smoke checks completed"
 
@@ -136,6 +120,20 @@ jobs:
               exit 1
             fi
           }
+
+      - name: Print Emulator Logs (if any)
+        if: always()
+        run: |
+         echo "=== Emulator log (if exists) ==="
+         # Find the log file inside the .avd directory (e.g., emulator.log or qemu.log)
+         LOG_DIR="$HOME/.android/avd/test.avd"
+          
+         if [ -d "$LOG_DIR" ]; then
+           echo "Checking directory: $LOG_DIR"
+           find "$LOG_DIR" -name "*.log" -maxdepth 1 -exec echo "--- {} ---" \; -exec tail -n 100 {} \;
+         else
+           echo "AVD directory not found."
+         fi
 
       - name: Collect ADB diagnostics (logcat)
         if: always()
